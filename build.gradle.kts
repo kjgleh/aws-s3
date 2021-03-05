@@ -24,6 +24,10 @@ dependencies {
 
     // aws
     implementation("org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE")
+
+    // localstack
+    implementation("org.testcontainers:localstack:1.15.2")
+    testImplementation("org.testcontainers:junit-jupiter:1.15.2")
 }
 
 tasks.withType<KotlinCompile> {

@@ -13,6 +13,10 @@ class S3Uploader(
 ) {
 
     fun upload(key: String, content: String): URL {
+        if (!amazonS3.doesBucketExistV2(bucket)) {
+            amazonS3.createBucket(bucket)
+        }
+
         amazonS3.putObject(bucket, key, content)
         return amazonS3.getUrl(bucket, key)
     }
